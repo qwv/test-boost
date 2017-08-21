@@ -1,0 +1,2 @@
+
+lib world : world.cpp ;

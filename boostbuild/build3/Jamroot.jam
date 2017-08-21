@@ -1,0 +1,19 @@
+
+lib boost_system : : <file>./lib/libboost_system.a ;
+
+project test
+        : requirements
+		<cxxflags>"-std=c++11"
+		<library>..//boost_system/<link>static
+
+exe async_client
+  :
+    async_client.cpp
+  : <include>$(BOOST_ROOT)
+    <include>../../../../..
+    <define>BOOST_ALL_NO_LIB=1
+    <threading>multi
+    <mingw><*><find-library>ws2_32
+    <mingw><*><find-library>mswsock
+    $(SOCKET_LIBS)
+  ;
