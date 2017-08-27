@@ -28,7 +28,8 @@ public:
 		PyGILState_STATE state_ = PyGILState_Ensure();
         try	
         {	
-		    if(self_) boost::python::call_method<void>(self_, "callback");
+            std::string param = "c++";
+		    if(self_) boost::python::call_method<void>(self_, "callback", param);
         }
         catch(const boost::python::error_already_set &e)
         {

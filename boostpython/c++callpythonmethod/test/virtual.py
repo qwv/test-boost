@@ -3,8 +3,8 @@
 from test import Base
 
 class PythonBase(Base):
-    def callback(self):
-        print "Python call back"
+    def callback(self, param):
+        print param + " call python method" 
 
 t = Base()
 print t.text()
