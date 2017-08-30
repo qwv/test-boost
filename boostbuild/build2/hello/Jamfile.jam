@@ -1,6 +1,6 @@
 
-#exe hello : hello.cpp ;
+exe hello : hello.cpp ;
 #exe hello : hello.cpp : <variant>release ;
 
-lib hello : hello.cpp ;
+#lib hello : hello.cpp ;
 #lib hello : hello.cpp : <link>static ;
